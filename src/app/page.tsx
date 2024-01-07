@@ -1,5 +1,6 @@
 import { tRPC } from "@@trpc/rsc";
 import { cookies } from "next/headers";
+import { GridBackground } from "./_components/grid";
 
 async function getCookieData() {
   const cookieData = cookies().getAll();
@@ -15,5 +16,9 @@ export default async function Home() {
   console.log(typeof cookieData);
 
   const connection = await tRPC.connect.query().then((res) => res);
-  return <div className="h-screen bg-indigo-300">{connection.status}</div>;
+  return (
+    <GridBackground>
+      <div className="border">{connection.status}</div>
+    </GridBackground>
+  );
 }

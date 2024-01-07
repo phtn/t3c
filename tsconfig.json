@@ -26,11 +26,16 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
+      "@@fire/*": ["./src/server/firebase/*"],
       "@@trpc/*": ["./src/trpc/*"],
       "@env": ["./src/env"],
+      "@lib/*": ["./src/lib/*"],
+      "@procedures/*": ["./src/server/procedures/*"],
+      "@resource/*": ["./src/server/resource/*"],
+      "@routers/*": ["./src/server/routers/*"],
       "@server/*": ["./src/server/*"],
       "@styles": ["./src/styles/globals.css"],
-      "@routers/*": ["./src/server/routers/*"],
+      "@utils/*": ["./src/utils/*"],
       "@xendit/*": ["./src/server/xendit/*"]
     }
   },
