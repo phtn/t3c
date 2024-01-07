@@ -29,6 +29,7 @@
       "@@trpc/*": ["./src/trpc/*"],
       "@env": ["./src/env"],
       "@server/*": ["./src/server/*"],
+      "@styles": ["./src/styles/globals.css"],
       "@routers/*": ["./src/server/routers/*"],
       "@xendit/*": ["./src/server/xendit/*"]
     }
