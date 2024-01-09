@@ -36,7 +36,7 @@ const SelectField = (props: SelectProps) => {
           <SelectLabel>{label}</SelectLabel>
           {items.map((item) => (
             <SelectItem
-              defaultValue={items && items[0].value}
+              defaultValue={"Select Item"}
               key={item.value}
               disabled={item.disabled}
               value={item.value}
