@@ -15,10 +15,8 @@ export const lookup = async (values: PaymentSchema) => {
   if (result?.[0]) {
     const id: string = result[0].id;
 
-    const response = await createLink(values, id);
-    return response.data;
+    return await createLink(values, id).then((response) => response);
   } else {
-    const response = await createAccount(values);
-    return response.data;
+    return await createAccount(values).then((response) => response);
   }
 };

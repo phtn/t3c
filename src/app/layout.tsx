@@ -3,9 +3,8 @@ import "@styles";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 import { TRPCProvider } from "@@trpc/provider";
-import { Theme, ThemeOptions } from "@radix-ui/themes";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
+import { Theme, type ThemeOptions } from "@radix-ui/themes";
+import { Toaster } from "@utils/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,14 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Theme {...themeProps}>
-            <TRPCProvider cookies={cookies().toString()}>
-              {children}
-            </TRPCProvider>
-          </Theme>
-        </ThemeProvider>
-        <Toaster />
+        <Theme {...themeProps}>
+          <TRPCProvider cookies={cookies().toString()}>{children}</TRPCProvider>
+        </Theme>
+        <Toaster {...toasterProps} />
       </body>
     </html>
   );

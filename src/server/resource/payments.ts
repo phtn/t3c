@@ -8,7 +8,10 @@ export const PaymentParams = z.object({
   fee_amount: z.string().optional(),
   fee_type: z.string().optional(),
   given_names: z.string().min(1).max(40),
-  iso_number: z.string().min(8).max(8),
+  iso_number: z
+    .string()
+    .min(8, { message: "ISO number must be atleast 8 digits long." })
+    .max(8),
   item_category: z.string().optional(),
   item_name: z.string().optional(),
   item_price: z.string().optional(),
@@ -70,6 +73,7 @@ export const PaymentResponse = z.object({
   amount: z.number(),
   expiry_date: z.string(),
   invoice_url: z.string(),
+  items: z.array(LineItem),
   avalailable_banks: z.array(z.string()),
   available_retail_outlets: z.array(z.object({})),
   available_ewallets: z.array(z.object({})),
@@ -79,5 +83,7 @@ export const PaymentResponse = z.object({
 
 export type ResponseSchema = z.infer<typeof PaymentResponse>;
 export type ResourceSchema = z.infer<typeof CreateLinkResource>;
+export type ResourceData = { data: ResourceSchema; status: number };
+export type ResponseData = { data: ResponseSchema; status: number };
 
 export const url = "/v2/invoices";

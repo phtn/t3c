@@ -4,6 +4,6 @@ import { lookup } from "@server/utils";
 
 export const paymentsRouter = router({
   createInvoice: create.query(async ({ input }) => {
-    return await lookup(input);
+    return await lookup(input).then((response) => response);
   }),
 });

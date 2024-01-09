@@ -6,8 +6,8 @@ export const update = async (data: ResourceSchema, id: string) => {
   const Err = (err: Error) => {
     return err;
   };
-  const Ok = (response: any) => {
-    return response;
+  const Ok = () => {
+    return "success";
   };
 
   if (data) {

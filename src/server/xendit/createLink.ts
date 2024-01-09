@@ -1,6 +1,7 @@
 import {
   type PaymentSchema,
   type ResourceSchema,
+  type ResourceData,
   url,
 } from "@resource/payments";
 import { type AxiosInstance } from "axios";
@@ -28,12 +29,9 @@ export const createLink = async (values: PaymentSchema, id: string) => {
     return err;
   };
 
-  const Ok = async (response: any) => {
-    if (response?.status?.[200]) {
-      await update(response.data, id);
-      return response;
-    }
-    return Err(new Error("Error"));
+  const Ok = async (response: ResourceData) => {
+    await update(response.data, id);
+    return response.data;
   };
 
   return await onCreateLink(data, axiosInstance).then(Ok, Err);
