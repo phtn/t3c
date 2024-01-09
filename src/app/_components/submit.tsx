@@ -73,7 +73,6 @@ export const ClickAction = ({
   isValid,
   loading,
   onClick,
-  width,
 }: ClickActionProps) => {
   const options = opts(
     <InactiveSubmit label={inactiveLabel} />,
@@ -83,7 +82,6 @@ export const ClickAction = ({
     <Variant
       variant="outline"
       onClick={onClick}
-      width={width}
       disabled={loading || isValid === false}
     >
       {options.get(loading)}
