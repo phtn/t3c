@@ -1,7 +1,9 @@
+import { type Control } from "react-hook-form";
+import { type FieldItemProps } from "../types";
+import { type PaymentSchema } from "@resource/payments";
+import { type CheckoutInput } from "../../fields";
+import { FieldItem } from "./FieldItem";
 import { FormField } from "@@components/form";
-import { Control } from "react-hook-form";
-import { FieldItemProps } from "../types";
-import FieldItem from "./FieldItem";
 import {
   Accordion,
   AccordionContent,
@@ -9,8 +11,6 @@ import {
   AccordionTrigger,
 } from "@@components/accordion";
 import { CardContent } from "@@components/card";
-import { PaymentSchema } from "@resource/payments";
-import { CheckoutInput } from "../../fields";
 
 type AdvancedProps = {
   control: Control<PaymentSchema>;
@@ -20,7 +20,7 @@ type AdvancedProps = {
 
 const render = (props: FieldItemProps) => <FieldItem {...props} />;
 
-const Advanced = ({ control, fields, loading }: AdvancedProps) => (
+export const Advanced = ({ control, fields, loading }: AdvancedProps) => (
   <Accordion className="mb-3 mt-8" type="single" collapsible>
     <AccordionItem value="item-1">
       <AccordionTrigger className="border-b-[0.33px] border-indigo-300 font-bold text-indigo-500 dark:border-slate-600 dark:text-indigo-100">
@@ -42,5 +42,3 @@ const Advanced = ({ control, fields, loading }: AdvancedProps) => (
     </AccordionItem>
   </Accordion>
 );
-
-export default Advanced;

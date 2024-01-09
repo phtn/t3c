@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from "react";
+import { type ChangeEventHandler } from "react";
 import { MessageArea, MessageWrap } from "../styled";
 import { SectionLabel } from "@@components/label";
 import { Pencil2Icon } from "@radix-ui/react-icons";

@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { type ReactElement } from "react";
 import { Box, Flex } from "@radix-ui/themes";
 import { opts } from "@utils/helpers";
 
@@ -19,19 +19,17 @@ const Horizontal = <T,>({
   keyExtractor,
 }: FlatListProps<T>) => (
   <Flex>
-    {data &&
-      data.map((item, index) => (
-        <div key={keyExtractor(item, index)}>{renderItem(item, index)}</div>
-      ))}
+    {data?.map((item, index) => (
+      <div key={keyExtractor(item, index)}>{renderItem(item, index)}</div>
+    ))}
   </Flex>
 );
 
 const Vertical = <T,>({ data, renderItem, keyExtractor }: FlatListProps<T>) => (
   <Box>
-    {data &&
-      data.map((item, index) => (
-        <div key={keyExtractor(item, index)}>{renderItem(item, index)}</div>
-      ))}
+    {data?.map((item, index) => (
+      <div key={keyExtractor(item, index)}>{renderItem(item, index)}</div>
+    ))}
   </Box>
 );
 

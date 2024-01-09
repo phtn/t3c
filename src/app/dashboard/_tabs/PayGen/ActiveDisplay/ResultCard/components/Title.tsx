@@ -1,4 +1,4 @@
-import { TitleItem } from "../hooks";
+import { type TitleItem } from "../hooks";
 import { ColWrap, TitleFlex, TitleLabel, TitleValue } from "./styled";
 
 type TitleProps = {
@@ -14,7 +14,7 @@ const Column = ({ item }: { item: TitleItem }) => (
 export const Title = ({ titleProps }: TitleProps) => {
   return (
     <TitleFlex>
-      {titleProps && titleProps.map((item) => <Column item={item} />)}
+      {titleProps?.map((item) => <Column key={item.value} item={item} />)}
     </TitleFlex>
   );
 };

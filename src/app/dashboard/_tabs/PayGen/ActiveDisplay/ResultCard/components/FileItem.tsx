@@ -1,4 +1,4 @@
-import { Box, Flex } from "@radix-ui/themes";
+import { Box } from "@radix-ui/themes";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { extractFileType } from "@utils/helpers";
 import { Card } from "@@components/card";

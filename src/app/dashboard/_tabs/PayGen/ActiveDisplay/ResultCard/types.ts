@@ -1,6 +1,6 @@
-import { PaymentResponse } from '@sources/payment'
+import { type ResponseSchema } from "@resource/payments";
 
 export type ResultProps = {
-	values: PaymentResponse
-	recipient: string
-}
+  values: ResponseSchema;
+  recipient: string;
+};

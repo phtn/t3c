@@ -5,14 +5,14 @@ import { opts } from "@utils/helpers";
 import { ResultCard } from "./ResultCard";
 import { Display, PayGenLogo } from "./styled";
 import { useData } from "./hooks";
-import { ResponseSchema } from "@resource/payments";
+import { type ResponseSchema } from "@resource/payments";
 
 type CustomerData = {
   data: Error | ResponseSchema | undefined;
   recipient: string;
 };
 
-const ActiveDisplay = ({ data, recipient }: CustomerData) => {
+export const ActiveDisplay = ({ data, recipient }: CustomerData) => {
   const values = useData(data);
 
   const Options = useCallback(() => {
@@ -26,5 +26,3 @@ const ActiveDisplay = ({ data, recipient }: CustomerData) => {
 
   return <Options />;
 };
-
-export default ActiveDisplay;

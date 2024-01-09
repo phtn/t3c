@@ -1,22 +1,22 @@
-import { ChangeEvent } from "react";
+import { type ChangeEvent } from "react";
 import { ActionsWrap } from "../styled";
 import { Input } from "@@components/input";
 import { ClickAction } from "@@components/submit";
 
-type Attachment = {
-  filename: string;
-  contentType: string;
-  path: string;
-};
+// type Attachment = {
+//   filename: string;
+//   contentType: string;
+//   path: string;
+// };
 
-type EmailParams = {
-  to: string;
-  cc: string | null;
-  subject: string;
-  html: string | null;
-  text: string | null;
-  attachments: Attachment[] | null;
-};
+// type EmailParams = {
+//   to: string;
+//   cc: string | null;
+//   subject: string;
+//   html: string | null;
+//   text: string | null;
+//   attachments: Attachment[] | null;
+// };
 
 type ActionProps = {
   fileChange: (e: ChangeEvent<HTMLInputElement>) => void;

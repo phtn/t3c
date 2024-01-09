@@ -1,10 +1,9 @@
-import { type AccountResource } from "@resource/account";
 import { db } from "@lib/db";
 import { doc, setDoc } from "firebase/firestore";
-import { ResourceSchema } from "@resource/payments";
+import { type ResponseSchema } from "@resource/payments";
 
 export const createFirebaseAccount = async (
-  customer: ResourceSchema,
+  customer: ResponseSchema,
   id: string,
 ) => {
   const Err = (err: Error) => {

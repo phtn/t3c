@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
 import { onError, onSuccess } from "@utils/toast";
-import { PaymentSchema, ResponseSchema } from "@resource/payments";
+import { type PaymentSchema } from "@resource/payments";
 import { createInvoice } from "./serverOnly";
 
 export const useEmailParams = (form: UseFormReturn<PaymentSchema>) => {

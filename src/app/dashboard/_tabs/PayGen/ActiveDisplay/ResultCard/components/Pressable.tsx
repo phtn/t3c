@@ -1,10 +1,10 @@
+import { type ReactNode } from "react";
 import { Box, Flex } from "@radix-ui/themes";
-import { ReactNode } from "react";
-import { Label } from "../styled";
 import { Card } from "@@components/card";
-import tw from "tailwind-styled-components";
 import { CopyIcon } from "@radix-ui/react-icons";
 import { ExternalLinkIcon } from "lucide-react";
+import { Label } from "../styled";
+import tw from "tailwind-styled-components";
 
 type PressableProps = {
   children?: ReactNode;

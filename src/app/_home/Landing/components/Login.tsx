@@ -1,9 +1,5 @@
 import { auth } from "@lib/db";
-import {
-  EmailAuthProvider,
-  FacebookAuthProvider,
-  GoogleAuthProvider,
-} from "firebase/auth";
+import { EmailAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 export const Login = () => {

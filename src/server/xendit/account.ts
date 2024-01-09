@@ -1,16 +1,14 @@
-import type { AxiosInstance, AxiosRequestConfig } from "axios";
+import type { AxiosInstance } from "axios";
 import type {
   PaymentSchema,
-  ResourceData,
-  ResourceSchema,
   ResponseData,
   ResponseSchema,
 } from "@resource/payments";
 import { type AccountResource, url } from "@resource/account";
 import { createAxiosInstance, accountConfig as config } from "./axios";
-import { createFirebaseAccount } from "@@fire/create";
 import { shapeAccount as transform } from "@server/transformer/shapeValues";
 import { createLink } from "./createLink";
+import { createFirebaseAccount } from "@@fire/create";
 
 export const onCreateAccount = async (
   body: AccountResource,
@@ -31,7 +29,7 @@ export const createAccount = async (values: PaymentSchema) => {
   const Ok = async (response: ResponseData) => {
     console.log(response);
     const id: string = response?.data?.id;
-    // await createFirebaseAccount(response?.data, id);
+    await createFirebaseAccount(response?.data, id);
     return await createLink(values, id);
   };
 

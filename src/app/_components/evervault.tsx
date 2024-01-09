@@ -1,4 +1,4 @@
-import { useMotionValue, MotionValue } from "framer-motion";
+import { useMotionValue, type MotionValue } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useMotionTemplate, motion } from "framer-motion";
 import { Photons } from "./photons";
@@ -41,13 +41,13 @@ export const EvervaultCard = ({
   return (
     <div
       className={cn(
-        "p-0.5 group bg-transparent aspect-square shadow-xl shadow-indigo-300/50 flex items-center justify-center w-full h-full relative clip-path-triangle",
+        "group relative flex aspect-square h-full w-full items-center justify-center bg-transparent p-0.5 shadow-xl shadow-indigo-300/50 clip-path-triangle",
         className,
       )}
     >
       <div
         onMouseMove={onMouseMove}
-        className="group/card w-full relative overflow-hidden bg-transparent flex items-end justify-center h-full hover:scale-[120%] transition-all duration-1000"
+        className="group/card relative flex h-full w-full items-end justify-center overflow-hidden bg-transparent transition-all duration-1000 hover:scale-[120%]"
       >
         <CardPattern
           mouseX={mouseX}
@@ -55,13 +55,13 @@ export const EvervaultCard = ({
           randomString={randomString}
         />
         <div className="relative z-10 flex flex-col items-center justify-end">
-          <div className="relative h-14 w-44 flex items-center justify-center text-white hover:text-black font-extrabold text-4xl blur-0">
-            <div className="absolute w-full h-full" />
-            <span className="group-hover:text-black transition-colors duration-500 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-orange-300 z-30">
+          <div className="relative flex h-14 w-44 items-center justify-center text-4xl font-extrabold text-white blur-0 hover:text-black">
+            <div className="absolute h-full w-full" />
+            <span className="z-30 bg-gradient-to-r from-indigo-500 to-orange-300 bg-clip-text text-transparent transition-colors duration-500 group-hover:text-black">
               {text}
             </span>
           </div>
-          <span className="font-bold group-hover:bg-black px-3">{subtext}</span>
+          <span className="px-3 font-bold group-hover:bg-black">{subtext}</span>
         </div>
       </div>
     </div>
@@ -81,16 +81,16 @@ export function CardPattern({ mouseX, mouseY, randomString }: PatternParams) {
   return (
     <div className="pointer-events-none">
       <Photons />
-      <div className="absolute inset-0 group-hover/card:opacity-50 [mask-image:linear-gradient(white,transparent)]"></div>
+      <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-orange-200 opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-orange-200 opacity-0 backdrop-blur-xl transition duration-500 group-hover/card:opacity-100"
         style={style}
       />
       <motion.div
-        className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100 text-center"
+        className="absolute inset-0 text-center opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <span className="absolute inset-x-0 text-xs text-indigo-100 h-full break-words whitespace-pre-wrap font-mono font-bold transition duration-500">
+        <span className="absolute inset-x-0 h-full whitespace-pre-wrap break-words font-mono text-xs font-bold text-indigo-100 transition duration-500">
           {randomString}
         </span>
       </motion.div>

@@ -1,7 +1,7 @@
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { type ChangeEvent, useCallback, useEffect, useState } from "react";
 import { copyFn, transformDate } from "@utils/helpers";
 import { onError, onSuccess } from "@utils/toast";
-import { ResponseSchema } from "@resource/payments";
+import { type ResponseSchema } from "@resource/payments";
 
 type EmailHandlerParams = {
   recipient: string;
@@ -68,13 +68,13 @@ export const useEmailHandler = ({ recipient, values }: EmailHandlerParams) => {
       attachments: files,
     };
 
-    const Ok = (response: string) => {
+    const _Ok = (response: string) => {
       setLoading(false);
       onSuccess(response, `Recipient: ${params.to}`);
       console.log(params);
     };
 
-    const Err = (err: Error) => {
+    const _Err = (err: Error) => {
       setLoading(false);
       onError(err.name, err.message);
     };
@@ -117,12 +117,10 @@ export const useActiveControls = ({ values }: ControllerParams) => {
     const itemLabels = ["ISO Number", "Policy Number", "Assured Name"];
     if (items) {
       const itemValues = items[0]?.name?.split(" · ");
-      const itemPairs =
-        itemValues &&
-        itemValues.map((value, index) => ({
-          value,
-          label: itemLabels[index],
-        }));
+      const itemPairs = itemValues?.map((value, index) => ({
+        value,
+        label: itemLabels[index],
+      }));
       setTitleProps(itemPairs!);
     }
   }, [items]);

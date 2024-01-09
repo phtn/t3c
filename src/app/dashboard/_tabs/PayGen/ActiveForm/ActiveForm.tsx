@@ -3,15 +3,15 @@ import { CardContent, CardFooter } from "@@components/card";
 import { Form, FormField } from "@@components/form";
 import { Header } from "@@components/header";
 import { checkoutDefaults, checkoutInputs } from "../fields";
-import { FieldItemProps, FormProps } from "./types";
-import FieldItem from "./components/FieldItem";
-import Advanced from "./components/Advanced";
+import type { FieldItemProps, FormProps } from "./types";
+import { FieldItem } from "./components/FieldItem";
+import { Advanced } from "./components/Advanced";
 import { Variant } from "@@components/variant";
 import { SubmitAction } from "@@components/submit";
 
 const render = (props: FieldItemProps) => <FieldItem {...props} />;
 
-const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
+export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
   const { formState, handleSubmit, control, reset } = form;
   const { isValid } = formState;
 
@@ -75,5 +75,3 @@ const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
     </div>
   );
 };
-
-export default ActiveForm;

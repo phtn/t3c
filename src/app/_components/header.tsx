@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
-import tw from "tailwind-styled-components";
+import { type ReactNode } from "react";
 import { CardTitle } from "./card";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
+import tw from "tailwind-styled-components";
 
 type HeaderProps = {
   children?: ReactNode;

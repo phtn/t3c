@@ -20,7 +20,7 @@ export const Attachments = ({ data, fileRemove }: AttachmentProps) => {
       const { name, size, type } = props.item;
       return (
         <FileItem
-          index={props.index as number}
+          index={props.index!}
           name={name}
           size={size}
           type={type}
@@ -32,7 +32,7 @@ export const Attachments = ({ data, fileRemove }: AttachmentProps) => {
   );
   return (
     <Uploads>
-      <SectionLabel label="Attachments" extra={`[ ${data?.length || 0} ]`}>
+      <SectionLabel label="Attachments" extra={`[ ${data?.length ?? 0} ]`}>
         <FileTextIcon />
       </SectionLabel>
       <FlatList

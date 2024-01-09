@@ -11,7 +11,7 @@ const Authenticated = () => {
   const router = useRouter();
   useEffect(() => {
     router.push("/dashboard");
-  }, []);
+  }, [router]);
 
   return <Loader />;
 };
@@ -31,8 +31,8 @@ export const Main = () => {
 
   const LoadingOptions = useCallback(() => {
     const options = opts(<Loader />, <ViewOptions />);
-    return <>{options.get(context?.loading!)}</>;
-  }, [context?.loading]);
+    return <>{options.get(context?.loading ?? false)}</>;
+  }, [context?.loading, ViewOptions]);
 
   return (
     <AuthProvider>

@@ -1,7 +1,7 @@
-import { Variant } from "src/app/_components/variant";
-import { SmoothWriter, Word } from "src/app/_components/writer";
-import { getNextElement } from "@utils/helpers";
 import { useCallback, useEffect, useState } from "react";
+import { Variant } from "src/app/_components/variant";
+import { SmoothWriter, type Word } from "@@components/writer";
+import { getNextElement } from "@utils/helpers";
 import {
   InnerCol,
   JumboActions,

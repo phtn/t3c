@@ -14,7 +14,7 @@ export const useServerStatus = () => {
     const Err = () => {
       setStatus(false);
     };
-    connectionStatus().then(Ok, Err);
+    await connectionStatus().then(Ok, Err);
   };
 
   useEffect(() => {

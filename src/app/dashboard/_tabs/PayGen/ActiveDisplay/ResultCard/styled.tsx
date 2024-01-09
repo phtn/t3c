@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardFooter, Card as Display } from "@@components/card";
+import { Card, Card as Display } from "@@components/card";
 import styled from "styled-components";
 import tw from "tailwind-styled-components";
 

@@ -1,1 +1,1 @@
-export { default } from './ActiveDisplay'
+export { ActiveDisplay } from "./ActiveDisplay";
