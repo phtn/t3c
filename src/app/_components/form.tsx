@@ -10,13 +10,8 @@ import {
   useFormContext,
 } from "react-hook-form";
 import { Label } from "./label";
-import { Flex } from "@radix-ui/themes";
-import {
-  ExclamationTriangleIcon,
-  InfoCircledIcon,
-} from "@radix-ui/react-icons";
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { cn } from "@lib/utils";
-import { FileWarningIcon } from "lucide-react";
 
 const Form = FormProvider;
 

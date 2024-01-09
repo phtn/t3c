@@ -52,20 +52,22 @@ const Preview = ({ content, label, onClick }: PressableProps) => (
 );
 
 const Container = tw(Card)`
-	flex-auto rounded-md cursor-pointer py-2 px-4 border-0 
-  bg-neutral-100 
+	flex-auto rounded-md cursor-pointer py-2 px-4  
+  bg-neutral-100 dark:bg-indigo-500 
+  dark:border-indigo-500 border
 `;
 
 const Copy = tw(CopyIcon)`
-	mx-3 text-transparent/40
+	mx-3 text-transparent/40 dark:text-transparent/60
 `;
 
 const Open = tw(ExternalLinkIcon)`
-	mx-3 text-transparent/40 h-4 w-4
+	mx-3 text-transparent/40 dark:text-transparent/60 h-4 w-4
 `;
 
 const Value = tw.div`
-  text-indigo-800 text-[8px] md:text-[13px] items-center whitespace-nowrap grow-0 overflow-x-auto text-ellipsis
+  text-indigo-700 dark:text-indigo-300 text-[8px] md:text-[13px] 
+  items-center whitespace-nowrap grow-0 overflow-x-auto text-ellipsis
 `;
 
 export { LinkPressable, Pressable, Preview };

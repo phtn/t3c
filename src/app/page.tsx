@@ -1,6 +1,5 @@
 import { tRPC } from "@@trpc/rsc";
 import { cookies } from "next/headers";
-import { Landing } from "./_home/Landing";
 import { AuthProvider } from "./_home/Main/Context";
 import { Main } from "./_home/Main/Main";
 
@@ -34,12 +33,7 @@ const staticData = {
 export default async function Home() {
   const cookieData = await getCookieData();
   console.log(typeof cookieData);
-  // const createInvoice = await tRPC.createInvoice
-  //   .query(staticData)
-  //   .then((res) => {
-  //     console.log(res);
-  //     return res;
-  //   });
+
   const connection = await tRPC.connect.query().then((res) => res);
   return (
     <AuthProvider>

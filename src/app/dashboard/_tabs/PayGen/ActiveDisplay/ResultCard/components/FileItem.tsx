@@ -30,7 +30,7 @@ const FileItem = ({ index, name, size, type, onPress }: FileItemProps) => (
 );
 
 const Container = tw(Card)`
-	flex mb-[4px] flex-auto rounded-md cursor-pointer p-2 border-0 bg-indigo-200 dark:bg-indigo-400
+	flex mb-[4px] flex-auto rounded-md cursor-pointer p-2 border-0 bg-indigo-200 dark:bg-indigo-500
 `;
 const Column = tw(Box)`
 	overflow-x-auto flex-1
@@ -42,14 +42,14 @@ const FileNameWrap = tw.div`
   flex items-center justify-between 
 `;
 const FileName = tw.div`
-  text-indigo-950 text-[12px] font-medium tracking-tight
+  text-indigo-950 dark:text-indigo-50 text-[12px] font-bold tracking-tight
   flex flex-wrap overflow-x-scroll pb-1
 `;
 const FileSize = tw.div`
-  dark:text-indigo-50 text-indigo-600 text-[10px]
+  dark:text-indigo-300 text-indigo-600 text-[10px]
 `;
 const FileType = tw.div`
-  uppercase dark:text-indigo-50 text-indigo-600 tracking-tighter text-[10px] font-extrabold ml-3
+  uppercase dark:text-indigo-300 text-indigo-600 tracking-tighter text-[10px] font-extrabold ml-3
 `;
 
 export default FileItem;

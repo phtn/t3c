@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { ActionsWrap } from "../styled";
 import { Input } from "@@components/input";
-import { SubmitAction } from "@@components/submit";
+import { ClickAction } from "@@components/submit";
 
 type Attachment = {
   filename: string;
@@ -20,7 +20,7 @@ type EmailParams = {
 
 type ActionProps = {
   fileChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  sendEmail: (values: EmailParams) => void;
+  sendEmail: <T>(values: T) => void;
   loading: boolean;
 };
 
@@ -28,15 +28,15 @@ export const Actions = ({ fileChange, loading, sendEmail }: ActionProps) => {
   return (
     <ActionsWrap>
       <Input
+        multiple
         alt="upload"
         type="file"
         name="upload"
         onChange={fileChange}
         placeholder="Upload Attachment"
-        multiple
-        className="max-w-[220px] text-[12px]"
+        className="max-w-[250px] text-[12px]"
       />
-      <SubmitAction
+      <ClickAction
         activeLabel="Send Email"
         inactiveLabel="Sending"
         isValid={true}

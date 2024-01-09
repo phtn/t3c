@@ -41,7 +41,7 @@ export const SectionLabel = ({ children, extra, label }: SectionLabelProps) => {
     },
   );
   return (
-    <div className=" flex items-center pb-2 text-[12px] text-neutral-600">
+    <div className=" flex items-center pb-2 text-[12px] text-neutral-600 dark:text-neutral-400">
       {childrenWithProps}
       {label}
       <code className="mx-2 font-mono text-[11px] font-medium text-neutral-400">

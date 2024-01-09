@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
 import { onError, onSuccess } from "@utils/toast";
-import {
-  PaymentSchema,
-  ResourceSchema,
-  ResponseData,
-  ResponseSchema,
-} from "@resource/payments";
+import { PaymentSchema, ResponseSchema } from "@resource/payments";
 import { createInvoice } from "./serverOnly";
 
 export const useEmailParams = (form: UseFormReturn<PaymentSchema>) => {
@@ -33,7 +28,7 @@ export const usePayGen = () => {
     onError(err.name, err.message);
   };
 
-  const Ok = async (response: Error | ResponseSchema) => {
+  const Ok = async (response: any) => {
     setLoading(false);
     setPayload(response);
     const endTime = performance.now();

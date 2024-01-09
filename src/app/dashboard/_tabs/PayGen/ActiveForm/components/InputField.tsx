@@ -11,7 +11,7 @@ const InputField = (props: InputFieldProps) => {
   const { label, placeholder, type, field, alt } = props;
   return (
     <FormItem>
-      <FormLabel className="text-foreground flex items-center text-xs">
+      <FormLabel className="text-xs text-neutral-600 dark:text-neutral-400">
         {label}
       </FormLabel>
       <FormControl>

@@ -10,19 +10,19 @@ type HeaderProps = {
 };
 
 const Primary = tw.div`
-	flex items-end
+	flex items-center
 `;
 
 const Wrap = tw.div`
 	flex flex-col h-[100px] justify-center
-	mb-10 border-b-[0.33px] dark:border-slate-600 border-indigo-300
+	mb-8 border-b-[0.33px] dark:border-slate-600 border-indigo-300
 `;
 
 const Title = tw(CardTitle)`
-  py-1
+  py-2
 `;
 const Subtext = tw.div`
-	flex items-center text-[13px] dark:text-slate-400 text-neutral-500
+	flex items-center text-[13px] dark:text-neutral-400 text-neutral-500
 `;
 
 export const Header = ({ children, subtext, title }: HeaderProps) => (

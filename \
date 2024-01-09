@@ -35,7 +35,8 @@ const Uploads = tw.div`
   border-0 rounded overflow-y-scroll
 `;
 const ActionsWrap = tw.div`
-  flex justify-between items-center w-full h-[48px] mb-6
+  flex justify-between items-center w-full h-[64px] mb-6
+  border
 `;
 
 export {

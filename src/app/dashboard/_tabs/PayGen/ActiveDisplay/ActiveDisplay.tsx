@@ -19,7 +19,6 @@ const ActiveDisplay = ({ data, recipient }: CustomerData) => {
     const withValues = Object.keys(values).length > 0;
     const options = opts(
       <ResultCard values={values} recipient={recipient} />,
-
       <PayGenLogo />,
     );
     return <Display>{options.get(withValues)}</Display>;

@@ -57,3 +57,36 @@ export const SubmitAction = ({
     </Submit>
   );
 };
+
+type ClickActionProps = {
+  activeLabel: string;
+  inactiveLabel: string;
+  isValid?: boolean;
+  loading: boolean;
+  onClick: <T>(value: T) => void;
+  width?: number;
+};
+
+export const ClickAction = ({
+  activeLabel,
+  inactiveLabel,
+  isValid,
+  loading,
+  onClick,
+  width,
+}: ClickActionProps) => {
+  const options = opts(
+    <InactiveSubmit label={inactiveLabel} />,
+    <ActiveSubmit label={activeLabel} />,
+  );
+  return (
+    <Variant
+      variant="outline"
+      onClick={onClick}
+      width={width}
+      disabled={loading || isValid === false}
+    >
+      {options.get(loading)}
+    </Variant>
+  );
+};

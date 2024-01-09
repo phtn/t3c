@@ -4,10 +4,10 @@ import { Tabs, TabsContent, TabsTrigger } from "../_components/tabs";
 
 const Tab = tw(Tabs)`
   border-b-[0.2px] border-slate-600/80 
-  w-screen mt-[24px]
+  w-screen mt-[24px] 
 `;
 const Trigger = tw(TabsTrigger)`
-  space-x-6 transition-all duration-400 dark:text-slate-500 dark:hover:text-orange-100  
+  mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
 `;
 const ContentWrap = tw.div`
   h-[calc(100vh-100px)]

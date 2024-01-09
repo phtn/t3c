@@ -36,7 +36,7 @@ export const Attachments = ({ data, fileRemove }: AttachmentProps) => {
         <FileTextIcon />
       </SectionLabel>
       <FlatList
-        bgcolor="bg-neutral-100 h-[280px] rounded-lg p-[3px]"
+        bgcolor="bg-neutral-50 dark:bg-transparent/20 h-[255px] rounded-lg p-[3px] border dark:border-slate-800"
         data={data}
         keyExtractor={(item, index) =>
           `${item.name || `${Date.now().toString(20)}`}_${index}`

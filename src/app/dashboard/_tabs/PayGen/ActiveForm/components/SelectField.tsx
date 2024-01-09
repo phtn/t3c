@@ -31,12 +31,12 @@ const SelectField = (props: SelectProps) => {
       <SelectTrigger className="mt-6">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent className="bg-[#191818]">
+      <SelectContent>
         <SelectGroup>
           <SelectLabel>{label}</SelectLabel>
           {items.map((item) => (
             <SelectItem
-              defaultValue={items[0].value}
+              defaultValue={items[0] && items[0].value}
               key={item.value}
               disabled={item.disabled}
               value={item.value}

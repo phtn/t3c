@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { TRPCProvider } from "@@trpc/provider";
 import { Theme, type ThemeOptions } from "@radix-ui/themes";
 import { Toaster } from "@utils/components/ui/sonner";
+import { ThemeProvider } from "@utils/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ const themeProps: ThemeOptions = {
 
 const toasterProps = {
   expand: true,
-  richColors: true,
+  richColors: false,
 };
 
 export default function RootLayout({
@@ -39,9 +40,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        <Theme {...themeProps}>
-          <TRPCProvider cookies={cookies().toString()}>{children}</TRPCProvider>
-        </Theme>
+        <ThemeProvider attribute="class">
+          <Theme {...themeProps}>
+            <TRPCProvider cookies={cookies().toString()}>
+              {children}
+            </TRPCProvider>
+          </Theme>
+        </ThemeProvider>
         <Toaster {...toasterProps} />
       </body>
     </html>
