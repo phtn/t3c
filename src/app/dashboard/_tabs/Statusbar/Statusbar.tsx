@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useContext, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import {
   ActiveStatus,
   HStack,
@@ -13,7 +13,6 @@ import { useServerStatus } from "./hooks";
 import { opts } from "@utils/helpers";
 import { onInfo } from "@utils/toast";
 import { Panel } from "./Panel";
-import { AuthContext } from "src/app/_home/Main/Context";
 
 const Statusbar = () => {
   const { status } = useServerStatus();

@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import { AuthProvider } from "./_home/Main/Context";
 import { Main } from "./_home/Main/Main";
 
 async function getCookieData() {

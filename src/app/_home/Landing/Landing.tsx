@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { Jumbotron } from "./components/Jumbotron";
 import { Aliens } from "./components/Aliens";
 import { Pyramids } from "./components/Pyramids";
@@ -8,7 +8,6 @@ import { User } from "./components/User";
 import { Arrival } from "./components/Arrival";
 import { GridBackground } from "src/app/_components/grid";
 import { LandingViews } from "./components/styled";
-import { AuthContext } from "../Main/Context";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@lib/db";

@@ -18,13 +18,13 @@ import {
 } from "./schema";
 import { Control, ControllerRenderProps, useForm } from "react-hook-form";
 import { Input } from "@@components/input";
-import { useCallback, useContext, useEffect } from "react";
+import { useCallback } from "react";
 import { SubmitAction } from "@@components/submit";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@lib/db";
-import { onError, onSuccess } from "@utils/toast";
+import { onSuccess } from "@utils/toast";
 
 type ActiveFormProps = {
   form: FormType;
@@ -46,9 +46,12 @@ type FieldProps = {
 
 const render = ({ field, item }: RenderProps) => (
   <FormItem className="my-4">
-    <FormLabel>{item.label}</FormLabel>
+    <FormLabel className="text-indigo-100 dark:text-neutral-400">
+      {item.label}
+    </FormLabel>
     <FormControl>
       <Input
+        className="bg-indigo-50"
         alt={item.alt}
         placeholder={item.placeholder}
         type={item.type}

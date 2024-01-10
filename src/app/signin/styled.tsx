@@ -13,10 +13,10 @@ const TitleFlex = tw.div`
 `;
 
 const TitleIcon = tw(AvatarIcon)`
-  h-6 w-6 mr-3
+  h-6 w-6 mr-3 text-indigo-200
 `;
 const Title = tw.h1`
-  text-[24px]
+  text-[24px] text-indigo-200
 `;
 
 const Trigger = tw(TabsTrigger)`

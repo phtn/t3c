@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "t3c",
-  description: "T3 with ClerkAuth",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "PayGen",
+  description: "PayGen Reliable Payments",
+  icons: [{ rel: "icon", url: "/svg/logo-v1.svg" }],
 };
 
 const themeProps: ThemeOptions = {

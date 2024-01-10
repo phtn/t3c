@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { onError } from "@utils/toast";
 import { connectionStatus } from "./serverOnly";
 
 export const useServerStatus = () => {

@@ -23,6 +23,20 @@ const Signin = () => {
           <TabsContent value="signin">
             <Login />
           </TabsContent>
+          <TabsContent value="register">
+            <div className="h-[244px] text-[12px] text-indigo-200">
+              Contact Admin
+            </div>
+          </TabsContent>
+          <TabsContent value="help">
+            <div className="h-[244px] text-[12px] text-indigo-200">
+              <code>
+                Contact Support:
+                <br />
+                hq@re-up.ph
+              </code>
+            </div>
+          </TabsContent>
         </Tabs>
       </Container>
     </GridBackground>

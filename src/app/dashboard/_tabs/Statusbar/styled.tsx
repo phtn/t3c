@@ -40,7 +40,7 @@ const InactiveStatus = () => (
 
 const VersionNumber = () => (
   <StatusLabel>
-    <code className="font-thin text-neutral-400">v0.0.2</code>
+    <code className="font-thin text-neutral-400">v0.12.1</code>
   </StatusLabel>
 );
 
