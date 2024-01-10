@@ -19,13 +19,13 @@ const JumboFlex = tw.div`
   flex items-center justify-center md:justify-start
 `;
 const PaygenLogo = tw.div`
-  h-8 w-8 mr-3 mt-1 md:hidden
+  h-8 w-8 mr-3 mt-[3px] md:hidden
   bg-[url('/svg/logo-v1.svg')] bg-cover 
 `;
 const JumboTitle = tw.h1`
   text-transparent bg-clip-text 
   bg-gradient-to-t md:bg-gradient-to-tr  
-  from-indigo-500 to-orange-50
+  from-indigo-500 to-indigo-300
   dark:from-indigo-500 dark:to-orange-100
   text-[2.5rem] md:text-[3rem] 
   font-extrabold leading-[3.25rem] 
@@ -34,8 +34,8 @@ const JumboTitle = tw.h1`
 `;
 const JumboWriter = tw.h2`
   text-indigo-500 dark:text-orange-100 font-thin
-  mx-8 md:mx-0 md:text-[1.75rem] text-[1.25rem] tracking-wider
-  z-50
+  mx-8 md:mx-0 md:text-[1.75rem] text-[1rem] tracking-wider
+  z-50 flex justify-center md:justify-start
 `;
 const JumboSubtext = tw.div`
   flex h-fit items-center text-justify lg:w-[350px] 

@@ -5,7 +5,6 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "src/app/_components/sheet";
 import { Variant } from "src/app/_components/variant";
 import { Login } from "./Login";
@@ -14,7 +13,11 @@ import Link from "next/link";
 
 export const UserButton = () => (
   <Link href="/signin">
-    <Variant className="mx-6" size="icon" variant="link">
+    <Variant
+      className="mx-6 text-indigo-500 dark:text-indigo-200"
+      size="icon"
+      variant="link"
+    >
       <AvatarIcon className="h-[20px] w-[20px]" />
     </Variant>
   </Link>

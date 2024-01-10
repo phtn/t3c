@@ -13,13 +13,15 @@ import {
   PaygenLogo,
 } from "./styled";
 
+const cls = "text-indigo-500";
+
 const headlines: Word[][] = [
-  [{ text: "Reliable Payments", className: "text-indigo-500" }],
-  [{ text: "Credit Card Payments", className: "" }],
-  [{ text: "Bank Transfers", className: "" }],
-  [{ text: "E-wallets", className: "" }],
-  [{ text: "OTCs", className: "" }],
-  [{ text: "Subscriptions", className: "" }],
+  [{ text: "Reliable Payments", className: cls }],
+  [{ text: "Credit Card Payments", className: cls }],
+  [{ text: "Bank Transfers", className: cls }],
+  [{ text: "E-wallets", className: cls }],
+  [{ text: "OTCs", className: cls }],
+  [{ text: "Subscriptions", className: cls }],
 ];
 
 export const Jumbotron = () => {
