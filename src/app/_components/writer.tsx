@@ -176,7 +176,7 @@ export const SmoothWriter = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "block h-4 w-[4px] rounded-sm bg-indigo-500 sm:h-6 xl:h-10",
+          "block h-10 w-[4px] rounded-sm bg-indigo-500",
           cursorClassName,
         )}
       ></motion.span>

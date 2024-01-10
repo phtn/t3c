@@ -5,17 +5,20 @@ import { getNextElement } from "@utils/helpers";
 import {
   InnerCol,
   JumboActions,
+  JumboFlex,
   JumboSubtext,
   JumboTitle,
   JumboWrap,
   JumboWriter,
+  PaygenLogo,
 } from "./styled";
 
 const headlines: Word[][] = [
   [{ text: "Reliable Payments", className: "text-indigo-500" }],
   [{ text: "Credit Card Payments", className: "" }],
-  [{ text: "Bank Transfer", className: "" }],
+  [{ text: "Bank Transfers", className: "" }],
   [{ text: "E-wallets", className: "" }],
+  [{ text: "OTCs", className: "" }],
   [{ text: "Subscriptions", className: "" }],
 ];
 
@@ -37,13 +40,16 @@ export const Jumbotron = () => {
   return (
     <JumboWrap>
       <InnerCol>
-        <JumboTitle>PayGen</JumboTitle>
+        <JumboFlex>
+          <PaygenLogo />
+          <JumboTitle>PayGen</JumboTitle>
+        </JumboFlex>
         <JumboWriter>
           <Writer />
         </JumboWriter>
         <JumboSubtext>
-          The Arrival of Advanced Payment Integration for your complex
-          businesstransactions.
+          The Arrival of Advanced Payment Integration for your complex business
+          transactions.
         </JumboSubtext>
         <JumboActions>
           <Variant variant="default">Get Started</Variant>

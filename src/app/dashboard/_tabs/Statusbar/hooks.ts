@@ -24,8 +24,9 @@ export const useServerStatus = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!status) {
-        checkStatus().then((res) => res);
-        onError("Disconnected");
+        checkStatus().then((res) => {
+          console.log(res);
+        });
       }
     }, 10000);
     return () => clearInterval(interval);

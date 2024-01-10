@@ -17,13 +17,12 @@ import { AuthContext } from "src/app/_home/Main/Context";
 
 const Statusbar = () => {
   const { status } = useServerStatus();
-  const ctx = useContext(AuthContext);
 
   useEffect(() => {
     if (status) {
       onInfo("Server online");
     }
-  }, [status]);
+  }, []);
 
   const Status = useCallback(() => {
     const options = opts(<ActiveStatus />, <InactiveStatus />);
@@ -35,9 +34,7 @@ const Statusbar = () => {
       <Status />
       <Panel />
       <StatusRight>
-        <code className="text-[10px]">
-          {ctx ? <code>{ctx.user?.displayName}</code> : null}
-        </code>
+        <code className="text-[10px]"></code>
         <VersionNumber />
       </StatusRight>
     </HStack>

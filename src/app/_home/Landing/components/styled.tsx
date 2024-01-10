@@ -9,26 +9,43 @@ const LandingViews = tw.div`
 
 // JUMBOTRON
 const JumboWrap = tw.div`
-  z-20 flex items-center justify-start px-3 md:w-[calc(100vw/2)] md:px-12
+  z-50 flex items-center justify-start px-3 md:w-[calc(100vw/2)] md:px-12
 `;
 const InnerCol = tw.div`
   flex flex-col
 `;
+
+const JumboFlex = tw.div`
+  flex items-center justify-center md:justify-start
+`;
+const PaygenLogo = tw.div`
+  h-8 w-8 mr-3 mt-1 md:hidden
+  bg-[url('/svg/logo-v1.svg')] bg-cover 
+`;
 const JumboTitle = tw.h1`
-  bg-gradient-to-tr from-indigo-500 from-30% via-cyan-100 to-orange-50 
-  bg-clip-text text-[2.5rem] font-extrabold leading-[3.25rem] 
-  text-transparent dark:from-indigo-400 md:text-[3rem]
+  text-transparent bg-clip-text 
+  bg-gradient-to-t md:bg-gradient-to-tr  
+  from-indigo-500 to-orange-50
+  dark:from-indigo-500 dark:to-orange-100
+  text-[2.5rem] md:text-[3rem] 
+  font-extrabold leading-[3.25rem] 
+  text-center
+  
 `;
 const JumboWriter = tw.h2`
   text-indigo-500 dark:text-orange-100 font-thin
-  mx-[1px] text-[1.75rem] tracking-wider
+  mx-8 md:mx-0 md:text-[1.75rem] text-[1.25rem] tracking-wider
+  z-50
 `;
 const JumboSubtext = tw.div`
   flex h-fit items-center text-justify lg:w-[350px] 
   text-[14px] text-neutral-500 dark:text-indigo-300/70 
+  mx-10 md:mx-0 z-50
+  
 `;
 const JumboActions = tw.div`
   flex h-[70px] items-end justify-around md:justify-between lg:w-[340px]
+  z-50
 `;
 
 // PYRAMIDS
@@ -58,9 +75,11 @@ export {
   JumboWrap,
   InnerCol,
   JumboActions,
+  JumboFlex,
   JumboSubtext,
   JumboTitle,
   JumboWriter,
+  PaygenLogo,
   PyramidWrap,
   DeltaWrap,
   Delta,

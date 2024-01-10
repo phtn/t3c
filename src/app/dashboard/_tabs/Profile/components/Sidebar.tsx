@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { cn } from "@lib/utils";
 import { Variant } from "@@components/variant";
+import { auth } from "@lib/db";
+import { onInfo } from "@utils/toast";
+import { useSignOut } from "react-firebase-hooks/auth";
+import { useRouter } from "next/navigation";
 
 const items = [
   { title: "Profile", href: "profile" },
@@ -12,12 +16,19 @@ const items = [
 
 export const Sidebar = () => {
   const [active, setActive] = useState("profile");
+  const router = useRouter();
 
   const handleOnSelect = (href: string) => () => {
     setActive(href);
   };
-  const handleSignOut = () => {
-    console.log(null);
+
+  const [signOut, loading, error] = useSignOut(auth);
+
+  const handleSignOut = async () => {
+    signOut().then(() => {
+      router.push("/");
+      onInfo("Signed out.");
+    });
   };
   return (
     <nav

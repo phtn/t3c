@@ -7,36 +7,6 @@ import { opts } from "@utils/helpers";
 import { Loader } from "src/app/_components/loader";
 import { useRouter } from "next/navigation";
 
-const Authenticated = () => {
-  const router = useRouter();
-  useEffect(() => {
-    router.push("/dashboard");
-  }, [router]);
-
-  return <Loader />;
-};
-
 export const Main = () => {
-  const context = useContext(AuthContext);
-
-  useEffect(() => {
-    console.log(context?.user);
-  }, [context]);
-
-  const ViewOptions = useCallback(() => {
-    const isAuthed = context?.user !== null;
-    const options = opts(<Authenticated />, <Landing />);
-    return <>{options.get(isAuthed)}</>;
-  }, [context?.user]);
-
-  const LoadingOptions = useCallback(() => {
-    const options = opts(<Loader />, <ViewOptions />);
-    return <>{options.get(context?.loading ?? false)}</>;
-  }, [context?.loading, ViewOptions]);
-
-  return (
-    <AuthProvider>
-      <LoadingOptions />
-    </AuthProvider>
-  );
+  return <Landing />;
 };

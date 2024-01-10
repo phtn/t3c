@@ -6,6 +6,7 @@ import { TRPCProvider } from "@@trpc/provider";
 import { Theme, type ThemeOptions } from "@radix-ui/themes";
 import { Toaster } from "@utils/components/ui/sonner";
 import { ThemeProvider } from "@utils/components/theme-provider";
+import { AuthProvider } from "./_home/Main/Context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ export const metadata = {
 };
 
 const themeProps: ThemeOptions = {
-  appearance: "light",
+  appearance: "dark",
   accentColor: "indigo",
   grayColor: "slate",
   panelBackground: "solid",
@@ -42,9 +43,11 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable}`}>
         <ThemeProvider attribute="class">
           <Theme {...themeProps}>
-            <TRPCProvider cookies={cookies().toString()}>
-              {children}
-            </TRPCProvider>
+            <AuthProvider>
+              <TRPCProvider cookies={cookies().toString()}>
+                {children}
+              </TRPCProvider>
+            </AuthProvider>
           </Theme>
         </ThemeProvider>
         <Toaster {...toasterProps} />

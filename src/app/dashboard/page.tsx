@@ -1,11 +1,15 @@
 "use client";
 
+import { useEffect } from "react";
 import { Content, Settings, Tab, Trigger } from "./styled";
 import PayGen from "./_tabs/PayGen";
 import { Profile } from "./_tabs/Profile/Profile";
 import Reports from "./_tabs/Reports";
 import { TabsList } from "../_components/tabs";
 import Statusbar from "./_tabs/Statusbar/Statusbar";
+import { useContext } from "react";
+import { AuthContext } from "../_home/Main/Context";
+import { useRouter } from "next/navigation";
 
 const Beam = () => (
   <div className="w-screen">
@@ -16,28 +20,37 @@ const Beam = () => (
   </div>
 );
 
-const Dashboard = () => (
-  <div>
-    <Tab defaultValue="home">
-      <Beam />
-      <TabsList>
-        <Trigger value="home">Dashboard</Trigger>
-        <Trigger value="reports">Reports</Trigger>
-        <Trigger value="settings">Settings</Trigger>
-        <Trigger value="profile">Account</Trigger>
-      </TabsList>
+const Dashboard = () => {
+  const ctx = useContext(AuthContext);
+  const router = useRouter();
+  useEffect(() => {
+    if (!ctx) {
+      router.push("/");
+    }
+  }, [ctx, router]);
+  return (
+    <div>
+      <Tab defaultValue="home">
+        <Beam />
+        <TabsList>
+          <Trigger value="home">Dashboard</Trigger>
+          <Trigger value="reports">Reports</Trigger>
+          <Trigger value="settings">Settings</Trigger>
+          <Trigger value="profile">Account</Trigger>
+        </TabsList>
 
-      <Content>
-        <PayGen />
-        <Reports />
-        <Settings>
-          <span>Edit your profile or update contact information.</span>
-        </Settings>
-        <Profile />
-      </Content>
-    </Tab>
-    <Statusbar />
-  </div>
-);
+        <Content>
+          <PayGen />
+          <Reports />
+          <Settings>
+            <span>Edit your profile or update contact information.</span>
+          </Settings>
+          <Profile />
+        </Content>
+      </Tab>
+      <Statusbar />
+    </div>
+  );
+};
 
 export default Dashboard;

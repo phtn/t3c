@@ -15,9 +15,5 @@ export default async function Home() {
   const cookieData = await getCookieData();
   console.log(typeof cookieData);
 
-  return (
-    <AuthProvider>
-      <Main />
-    </AuthProvider>
-  );
+  return <Main />;
 }

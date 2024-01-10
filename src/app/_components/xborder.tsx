@@ -81,21 +81,24 @@ export const MovingBorder = ({
   ry?: string;
   [key: string]: unknown;
 }) => {
-  const pathRef = useRef<SVGRectElement>(null);
+  const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
-    const length = pathRef.current?.getTotalLength();
-    if (length) {
-      const pxPerMillisecond = length / duration;
-      progress.set((time * pxPerMillisecond) % length);
+    if (pathRef) {
+      const length = pathRef?.current?.getTotalLength();
+      if (length) {
+        const pxPerMillisecond = length / duration;
+        progress.set((time * pxPerMillisecond) % length);
+      }
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x,
-  );
+  const x = useTransform(progress, (val) => {
+    if (pathRef.current !== null) {
+      return pathRef.current?.getPointAtLength(val).x;
+    }
+  });
   const y = useTransform(
     progress,
     (val) => pathRef.current?.getPointAtLength(val + 5).y,

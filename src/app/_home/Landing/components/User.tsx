@@ -10,13 +10,14 @@ import {
 import { Variant } from "src/app/_components/variant";
 import { Login } from "./Login";
 import { UserWrap } from "./styled";
+import Link from "next/link";
 
 export const UserButton = () => (
-  <SheetTrigger asChild>
-    <Variant className="mx-6" size="icon" variant="ghost">
+  <Link href="/signin">
+    <Variant className="mx-6" size="icon" variant="link">
       <AvatarIcon className="h-[20px] w-[20px]" />
     </Variant>
-  </SheetTrigger>
+  </Link>
 );
 
 export const UserLogin = () => (
@@ -36,6 +37,6 @@ export const UserLogin = () => (
 
 export const User = () => (
   <UserWrap>
-    <UserLogin />
+    <UserButton />
   </UserWrap>
 );
