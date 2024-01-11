@@ -26,7 +26,7 @@ export const Profile = () => {
           <AsideWrap>
             <Sidebar />
           </AsideWrap>
-          <div className="flex-1 lg:max-w-2xl">Profile Settings</div>
+          <div className="mt-3 flex-1 lg:max-w-2xl">Profile Settings</div>
         </Flex>
       </InnerBlock>
     </ProfileWrap>

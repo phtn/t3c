@@ -7,7 +7,7 @@ const Tab = tw(Tabs)`
   w-screen mt-[24px] 
 `;
 const Trigger = tw(TabsTrigger)`
-  mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
+  md:mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
 `;
 const ContentWrap = tw.div`
   h-[calc(100vh-100px)]
@@ -16,6 +16,7 @@ const ContentWrap = tw.div`
 const Content = styled(ContentWrap).attrs({})``;
 
 const TabContent = tw(TabsContent)`
+  mx-6 md:mx-0
 `;
 type TC = {
   value?: string;

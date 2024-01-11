@@ -33,12 +33,12 @@ export const Sidebar = () => {
   return (
     <nav
       className={cn(
-        "flex h-full space-x-4 p-6 lg:flex-col lg:items-start lg:space-x-0 lg:space-y-4",
+        "flex h-full overflow-x-scroll md:space-x-4 md:p-6 lg:flex-col lg:items-start lg:space-x-0 lg:space-y-4",
       )}
     >
       {items.map((item) => (
         <Variant
-          className="w-full font-medium"
+          className="font-medium md:w-full"
           key={item.href}
           onClick={handleOnSelect(item.href)}
           variant={active === item.href ? "secondary" : "ghost"}
