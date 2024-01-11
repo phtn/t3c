@@ -29,7 +29,7 @@ export const useServerStatus = () => {
       }
     }, 10000);
     return () => clearInterval(interval);
-  }, [status, router]);
+  }, [status]);
 
   return { status };
 };
