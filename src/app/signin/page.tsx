@@ -1,45 +1,31 @@
 "use client";
 
 import { GridBackground } from "@@components/grid";
-import { Container, TitleFlex, Title, TitleIcon } from "./styled";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@@components/tabs";
-import { Login } from "./form";
+import { useCallback } from "react";
+import { useLocalStorage } from "./hooks";
+import { opts } from "@utils/helpers";
+import { Signin } from "./signin";
+import { VerifyAccount } from "./verify";
+import { onSuccess } from "@utils/toast";
 
-const Signin = () => {
+const Sign = () => {
+  const { getCreds } = useLocalStorage();
+  const creds = getCreds();
+  const client = JSON.parse(creds!);
+  const withCreds = getCreds() !== null && client.clientId === "118942";
+  const SignOptions = useCallback(() => {
+    const options = opts(<Signin />, <VerifyAccount />);
+    return <>{options.get(withCreds)}</>;
+  }, [withCreds]);
+
+  if (withCreds) {
+    onSuccess("AutoProtect", "Welcome to PayGen");
+  }
+
   return (
     <GridBackground>
-      <Container>
-        <TitleFlex>
-          <TitleIcon />
-          <Title>Sign in to your account</Title>
-        </TitleFlex>
-
-        <Tabs defaultValue="signin">
-          <TabsList className="border-b border-slate-800">
-            <TabsTrigger value="signin">Sign in</TabsTrigger>
-            <TabsTrigger value="register">Register</TabsTrigger>
-            <TabsTrigger value="help">Help</TabsTrigger>
-          </TabsList>
-          <TabsContent value="signin">
-            <Login />
-          </TabsContent>
-          <TabsContent value="register">
-            <div className="h-[244px] text-[12px] text-indigo-200">
-              Contact Admin
-            </div>
-          </TabsContent>
-          <TabsContent value="help">
-            <div className="h-[244px] text-[12px] text-indigo-200">
-              <code>
-                Contact Support:
-                <br />
-                hq@re-up.ph
-              </code>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </Container>
+      <SignOptions />
     </GridBackground>
   );
 };
-export default Signin;
+export default Sign;

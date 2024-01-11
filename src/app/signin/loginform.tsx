@@ -8,14 +8,13 @@ import {
   FormLabel,
 } from "@@components/form";
 import {
-  FormType,
   LoginField,
   LoginFormProps,
   LoginSchema,
   loginDefaults,
   loginFields,
   loginSchema,
-} from "./schema";
+} from "./loginschema";
 import { Control, ControllerRenderProps, useForm } from "react-hook-form";
 import { Input } from "@@components/input";
 import { useCallback } from "react";
@@ -24,24 +23,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@lib/db";
-import { onSuccess } from "@utils/toast";
-
-type ActiveFormProps = {
-  form: FormType;
-  loading: boolean;
-  loginFields: LoginField[];
-  onSubmit: (values: LoginSchema) => void;
-};
-
-type RenderProps = {
-  field: ControllerRenderProps<LoginSchema>;
-  item: LoginField;
-};
+import { onSuccess, onError } from "@utils/toast";
 
 type FieldProps = {
   fields: LoginField[];
   loading: boolean;
   control: Control<LoginSchema>;
+};
+
+type RenderProps = {
+  field: ControllerRenderProps<LoginSchema>;
+  item: LoginField;
 };
 
 const render = ({ field, item }: RenderProps) => (
@@ -73,12 +65,7 @@ const Fields = ({ control, fields, loading }: FieldProps) => {
   ));
 };
 
-export const ActiveForm = ({
-  loading,
-  loginFields,
-  form,
-  onSubmit,
-}: ActiveFormProps) => {
+export const ActiveForm = ({ loading, form, onSubmit }: LoginFormProps) => {
   const { handleSubmit, control, formState } = form;
   const { isValid } = formState;
 
@@ -105,12 +92,7 @@ const LoginForm = (props: LoginFormProps) => {
   const { form, onSubmit, loading } = props;
   return (
     <Form {...form}>
-      <ActiveForm
-        form={form}
-        loading={loading}
-        loginFields={loginFields}
-        onSubmit={onSubmit}
-      />
+      <ActiveForm form={form} loading={loading} onSubmit={onSubmit} />
     </Form>
   );
 };
@@ -121,15 +103,19 @@ export const Login = () => {
     defaultValues: loginDefaults,
   });
 
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
 
   const router = useRouter();
   const onSubmit = (values: LoginSchema) => {
     const { email, password } = values;
-    signInWithEmailAndPassword(email, password).then(() => {
-      router.push("/dashboard");
-      onSuccess("Signed in!");
+    signInWithEmailAndPassword(email, password).then((user) => {
+      if (user) {
+        router.push("/dashboard");
+        onSuccess("Signed in!");
+      } else {
+        onError("Error", "Unable to authenticate.");
+      }
     });
   };
 
