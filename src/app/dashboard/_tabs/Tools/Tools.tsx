@@ -1,13 +1,8 @@
 import { Container, GridContent, ToolsTitle, ToolsTitleWrap } from "./styled";
 import { DashboardWrap } from "../../styled";
 import Link from "next/link";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardTitle,
-} from "@@components/card";
-import { MixIcon, TriangleRightIcon } from "@radix-ui/react-icons";
+import { Card, CardDescription, CardTitle } from "@@components/card";
+import { MixIcon } from "@radix-ui/react-icons";
 
 type ToolType = {
   description: string;

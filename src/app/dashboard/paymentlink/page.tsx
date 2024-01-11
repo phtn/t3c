@@ -10,7 +10,6 @@ import { Container, GridContent } from "./styled";
 import { PaymentParams, type PaymentSchema } from "@resource/payments";
 import { DashboardWrap } from "../styled";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Variant } from "@@components/variant";
 

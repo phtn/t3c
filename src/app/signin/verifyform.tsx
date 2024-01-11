@@ -22,7 +22,7 @@ export const VerifyForm = () => {
   };
 
   const onSubmit = () => {
-    if (typeof window !== "undefined" && window.localStorage) {
+    if (window?.localStorage) {
       localStorage.setItem("clientCreds", JSON.stringify({ clientId: input }));
     }
     if (input !== "118942") {

@@ -1,9 +1,9 @@
 "use client";
 
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Tab, Trigger } from "./styled";
 import { TabsList } from "@@components/tabs";
-import Statusbar from "./_tabs/Statusbar/Statusbar";
+import { Statusbar } from "./_tabs/Statusbar/Statusbar";
 import { Beam } from "./beam";
 
 const DashLayout = ({ children }: { children: ReactNode }) => (

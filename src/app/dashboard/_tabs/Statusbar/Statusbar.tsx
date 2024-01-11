@@ -14,7 +14,7 @@ import { opts } from "@utils/helpers";
 import { onInfo } from "@utils/toast";
 import { Panel } from "./Panel";
 
-const Statusbar = () => {
+export const Statusbar = () => {
   const { status } = useServerStatus();
 
   useEffect(() => {
@@ -39,4 +39,3 @@ const Statusbar = () => {
     </HStack>
   );
 };
-export default Statusbar;
