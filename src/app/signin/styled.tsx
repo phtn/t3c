@@ -5,7 +5,7 @@ import tw from "tailwind-styled-components";
 
 const Container = tw.div`
   px-5 py-5 bg-black w-full md:w-[350px] h-fit 
-  rounded-xl shadow-md
+  rounded-xl shadow-md z-50 mx-3 md:mx-0
   border-slate-800 border
 `;
 
