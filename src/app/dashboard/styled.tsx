@@ -7,7 +7,7 @@ const Tab = tw(Tabs)`
   w-screen mt-[24px] 
 `;
 const Trigger = tw(TabsTrigger)`
-  md:mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
+  mx-[4px] md:mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
 `;
 const ContentWrap = tw.div`
   h-[calc(100vh-100px)]

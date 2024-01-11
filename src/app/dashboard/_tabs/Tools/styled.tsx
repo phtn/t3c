@@ -19,7 +19,7 @@ const Title = tw.div`
 `;
 
 const ToolContainer = tw(Card)`
-  dark:border-slate-600 border-sky-500 p-3
+  dark:border-slate-600 border-sky-500 p-3 pt-5
 `;
 
 const ToolTitle = tw.div`
