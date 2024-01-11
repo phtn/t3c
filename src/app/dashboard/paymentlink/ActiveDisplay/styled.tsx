@@ -3,7 +3,7 @@
 import tw from "tailwind-styled-components";
 
 const Display = tw.div`
-  border-l-[0.33px] dark:border-slate-600 border-indigo-300
+  md:border-l-[0.33px] dark:border-slate-600 border-indigo-300
   overflow-hidden col-span-3 pl-7
 `;
 const LogoWrap = tw.div`
