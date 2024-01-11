@@ -14,7 +14,7 @@ const TitleWrap = tw.div`
   h-[48px] flex items-start justify-between
 `;
 
-const Title = tw.div`
+const TitleFlex = tw.div`
   text-[1.5rem] font-bold flex items-center
 `;
 
@@ -22,7 +22,17 @@ const ToolContainer = tw(Card)`
   dark:border-slate-600 border-sky-500 p-3 pt-5
 `;
 
-const ToolTitle = tw.div`
+const ToolTitleWrap = tw.div`
+  flex items-center justify-between
+`;
+
+const ToolTag = tw.div`
+  bg-gradient-to-tr from-sky-500 to-pink-500 rounded-md text-[10px] flex items-center justify-center 
+
+  h-[24px] w-fit px-3 uppercase font-bold 
+`;
+
+const Title = tw.div`
   text-neutral-500 dark:text-indigo-50
 `;
 
@@ -42,10 +52,12 @@ export {
   Container,
   GridContent,
   Title,
+  TitleFlex,
   TitleWrap,
   ToolContainer,
   ToolDescription,
   ToolSubtext,
-  ToolTitle,
+  ToolTag,
+  ToolTitleWrap,
   ToolIcon,
 };

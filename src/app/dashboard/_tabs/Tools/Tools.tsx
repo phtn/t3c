@@ -4,15 +4,16 @@ import {
   ToolContainer,
   Title,
   TitleWrap,
-  ToolTitle,
+  TitleFlex,
   ToolIcon,
   ToolDescription,
   ToolSubtext,
+  ToolTitleWrap,
+  ToolTag,
 } from "./styled";
 import { DashboardWrap } from "../../styled";
 import Link from "next/link";
-import { Card, CardDescription, CardTitle } from "@@components/card";
-import { MixIcon } from "@radix-ui/react-icons";
+import { CardTitle } from "@@components/card";
 
 type ToolType = {
   description: string;
@@ -25,7 +26,10 @@ const Tool = (props: ToolType) => {
   return (
     <Link href={href}>
       <ToolContainer>
-        <CardTitle>{title}</CardTitle>
+        <ToolTitleWrap>
+          <CardTitle>{title}</CardTitle>
+          <ToolTag>new</ToolTag>
+        </ToolTitleWrap>
         <ToolDescription>{description}</ToolDescription>
         <ToolSubtext>
           <span>v0.12.2</span>
@@ -37,10 +41,10 @@ const Tool = (props: ToolType) => {
 
 const ContentTitle = () => (
   <TitleWrap>
-    <Title>
+    <TitleFlex>
       <ToolIcon />
-      <ToolTitle>Tools</ToolTitle>
-    </Title>
+      <Title>Tools</Title>
+    </TitleFlex>
   </TitleWrap>
 );
 
@@ -51,7 +55,7 @@ export const Tools = () => {
         <ContentTitle />
         <GridContent>
           <Tool
-            description="Generate payment links with Xendit. Customized email and attach files."
+            description="Generate payment links with Xendit."
             href="/dashboard/paymentlink"
             title="Create Payment Link"
           />
