@@ -28,14 +28,15 @@ const SelectField = (props: SelectProps) => {
   };
   return (
     <Select onValueChange={onChange}>
-      <SelectTrigger className="mt-6">
+      <SelectTrigger className="mt-6 text-neutral-500">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>{label}</SelectLabel>
+          <SelectLabel className="text-neutral-500">{label}</SelectLabel>
           {items.map((item) => (
             <SelectItem
+              className="dark:text-neutral-500"
               defaultValue={"Select Item"}
               key={item.value}
               disabled={item.disabled}

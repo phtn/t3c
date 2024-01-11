@@ -81,7 +81,7 @@ export const useEmailHandler = ({ recipient, values }: EmailHandlerParams) => {
 
     const Test = () => {
       setLoading(false);
-      onSuccess("Success", `Recipient: ${params.to}`);
+      onSuccess("Work in progress...", `Recipient: ${params.to}`);
       console.log(params);
     };
 
