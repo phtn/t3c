@@ -27,7 +27,7 @@ const Sign = () => {
 
   return (
     <GridBackground>
-      <div className="z-50 flex flex-col items-center">
+      <div className="z-50 mt-[-150px] flex h-fit flex-col items-center md:mt-0">
         <Aliens />
         <JumboFlex>
           <PaygenLogo />
