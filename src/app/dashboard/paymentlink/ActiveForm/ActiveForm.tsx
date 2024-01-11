@@ -34,7 +34,7 @@ export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
   };
 
   return (
-    <div className="col-span-2 pr-7">
+    <div className="col-span-2 md:pr-7">
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Header
