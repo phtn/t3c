@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { Content, Settings } from "./styled";
-import { Profile } from "./_tabs/Profile/Profile";
-import Reports from "./_tabs/Reports";
-import { useContext } from "react";
-import { AuthContext } from "../_home/Main/Context";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Content } from "./styled";
+import { Profile } from "./_tabs/Profile/Profile";
+import { Reports } from "./_tabs/Reports";
+import { Settings } from "./_tabs/Settings";
 import { Tools } from "./_tabs/Tools/Tools";
+import { AuthContext } from "../_home/Main/Context";
 
 const Dashboard = () => {
   const ctx = useContext(AuthContext);
@@ -21,9 +21,7 @@ const Dashboard = () => {
     <Content>
       <Tools />
       <Reports />
-      <Settings>
-        <span>Edit your profile or update contact information.</span>
-      </Settings>
+      <Settings />
       <Profile />
     </Content>
   );

@@ -28,7 +28,7 @@ const ReportsWrap = styled(TabContent).attrs<TC>({
   value: "reports",
 })``;
 
-const Settings = styled(TabContent).attrs<TC>({
+const SettingsWrap = styled(TabContent).attrs<TC>({
   value: "settings",
 })``;
 
@@ -41,7 +41,7 @@ export {
   DashboardWrap,
   ProfileWrap,
   ReportsWrap,
-  Settings,
+  SettingsWrap,
   Tab,
   Trigger,
 };

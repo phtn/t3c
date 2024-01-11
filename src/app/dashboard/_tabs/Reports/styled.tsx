@@ -9,12 +9,12 @@ const GridContent = tw.div`
 	md:grid xl:grid-cols-3 md:grid-cols-2 gap-6 
 `;
 
-const ToolsTitleWrap = tw.div`
+const TitleWrap = tw.div`
   h-[48px] flex items-start justify-between
 `;
 
-const ToolsTitle = tw.div`
+const Title = tw.div`
   text-[1.5rem] font-bold flex items-center
 `;
 
-export { Container, GridContent, ToolsTitle, ToolsTitleWrap };
+export { Container, GridContent, Title, TitleWrap };

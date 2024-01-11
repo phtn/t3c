@@ -8,8 +8,8 @@ import {
   FormLabel,
 } from "@@components/form";
 import {
-  LoginField,
-  LoginFormProps,
+  type LoginField,
+  type LoginFormProps,
   LoginSchema,
   loginDefaults,
   loginFields,

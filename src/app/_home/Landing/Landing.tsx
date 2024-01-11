@@ -20,7 +20,7 @@ export const Landing = () => {
         router.push("/dashboard");
       }
     });
-  }, []);
+  }, [router]);
   return (
     <GridBackground>
       <User />

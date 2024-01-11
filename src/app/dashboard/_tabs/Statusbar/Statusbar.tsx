@@ -21,7 +21,7 @@ export const Statusbar = () => {
     if (status) {
       onInfo("Server online");
     }
-  }, []);
+  }, [status]);
 
   const Status = useCallback(() => {
     const options = opts(<ActiveStatus />, <InactiveStatus />);
