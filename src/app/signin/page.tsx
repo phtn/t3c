@@ -7,6 +7,9 @@ import { opts } from "@utils/helpers";
 import { Signin } from "./signin";
 import { VerifyAccount } from "./verify";
 import { onSuccess } from "@utils/toast";
+import { Aliens } from "../_home/Landing/components/Aliens";
+import { Arrival } from "../_home/Landing/components/Arrival";
+import { JumboFlex, JumboTitle, PaygenLogo } from "./styled";
 
 const Sign = () => {
   const { getCreds } = useLocalStorage();
@@ -24,7 +27,14 @@ const Sign = () => {
 
   return (
     <GridBackground>
-      <SignOptions />
+      <div className="z-50 flex flex-col items-center">
+        <Aliens />
+        <JumboFlex>
+          <PaygenLogo />
+          <JumboTitle>PayGen</JumboTitle>
+        </JumboFlex>
+        <SignOptions />
+      </div>
     </GridBackground>
   );
 };
