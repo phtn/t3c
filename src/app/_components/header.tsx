@@ -10,7 +10,7 @@ type HeaderProps = {
 };
 
 const Primary = tw.div`
-	flex items-center
+	flex items-center justify-between
 `;
 
 const Wrap = tw.div`
@@ -32,7 +32,7 @@ export const Header = ({ children, subtext, title }: HeaderProps) => (
       {children}
     </Primary>
     <Subtext>
-      <InfoCircledIcon className="mr-1 text-indigo-400 dark:text-indigo-300" />
+      <InfoCircledIcon className="mr-2 text-indigo-400 dark:text-sky-500" />
       {subtext}
     </Subtext>
   </Wrap>

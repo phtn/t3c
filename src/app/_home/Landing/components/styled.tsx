@@ -30,7 +30,6 @@ const JumboTitle = tw.h1`
   text-[2.5rem] md:text-[3rem] 
   font-extrabold leading-[3.25rem] 
   text-center
-  
 `;
 const JumboWriter = tw.h2`
   text-indigo-500 dark:text-orange-100 font-thin

@@ -80,7 +80,8 @@ export const ClickAction = ({
   );
   return (
     <Variant
-      variant="outline"
+      className="w-full md:w-fit"
+      variant="default"
       onClick={onClick}
       disabled={loading || isValid === false}
     >

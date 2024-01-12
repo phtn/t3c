@@ -15,7 +15,7 @@ const Label = tw.span`
 
 const EmailWrap = tw(Card)`
   border-0 h-fit my-6 rounded-md overflow-y-scroll 
-  grid grid-cols-3 gap-4
+  md:grid grid-cols-3 gap-4
 `;
 const TextArea = tw.textarea`
   h-[255px] w-full bg-neutral-50 dark:bg-transparent/20 p-3 
@@ -32,10 +32,10 @@ const MessageWrap = tw.div`
   col-span-2
 `;
 const Uploads = tw.div`
-  border-0 rounded overflow-y-scroll
+  border-0 rounded overflow-y-scroll mt-3 md:mt-0
 `;
 const ActionsWrap = tw.div`
-  flex justify-between items-center w-full h-[48px] mb-6
+  md:flex justify-between items-center w-full md:h-[48px] h-fit mb-6
 `;
 
 export {

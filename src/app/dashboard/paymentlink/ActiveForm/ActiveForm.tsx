@@ -41,14 +41,24 @@ export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
             title="Payment Link"
             subtext="Fill out all required input fields."
           >
-            <Variant
-              onClick={handleCreateNew}
-              className="mx-10"
-              size="sm"
-              variant="outline"
-            >
-              Create New Link
-            </Variant>
+            <div className="flex items-center">
+              <Variant
+                onClick={handleCreateNew}
+                className="mr-2"
+                size="sm"
+                variant="default"
+              >
+                New
+              </Variant>
+              <Variant
+                onClick={handleCreateNew}
+                className="mr-2"
+                size="sm"
+                variant="destructive"
+              >
+                Clear
+              </Variant>
+            </div>
           </Header>
 
           <CardContent className="grid grid-cols-2 gap-x-2 gap-y-8 md:gap-x-8">

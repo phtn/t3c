@@ -5,6 +5,7 @@ import { CopyIcon } from "@radix-ui/react-icons";
 import { ExternalLinkIcon } from "lucide-react";
 import { Label } from "../styled";
 import tw from "tailwind-styled-components";
+import Link from "next/link";
 
 type PressableProps = {
   children?: ReactNode;
@@ -37,36 +38,42 @@ const Pressable = ({ content, label, onClick }: PressableProps) => (
   </Container>
 );
 
-const Preview = ({ content, label, onClick }: PressableProps) => (
+const Preview = ({
+  content,
+  label,
+  onClick,
+  link,
+}: PressableProps & { link: string }) => (
   <Container onClick={onClick}>
     <Flex gap={"3"} align={"center"}>
-      <Box>
+      <Link target="_blank" href={link!} rel="noopener noreferrer">
         <Label>
           {label}
           <Open />
         </Label>
         <Value>{content}</Value>
-      </Box>
+      </Link>
     </Flex>
   </Container>
 );
 
 const Container = tw(Card)`
 	flex-auto rounded-md cursor-pointer py-2 px-4  
-  bg-neutral-100 dark:bg-indigo-500 
-  dark:border-indigo-500 border
+  bg-neutral-100 dark:bg-sky-800 
+  dark:border-sky-900 border 
+  hover:scale-[98%] transition-all duration-300
 `;
 
 const Copy = tw(CopyIcon)`
-	mx-3 text-transparent/40 dark:text-transparent/60
+	mx-3 text-transparent/40 dark:text-orange-300/80
 `;
 
 const Open = tw(ExternalLinkIcon)`
-	mx-3 text-transparent/40 dark:text-transparent/60 h-4 w-4
+	mx-3 text-transparent/40 dark:text-orange-300/80 h-4 w-4
 `;
 
 const Value = tw.div`
-  text-indigo-700 dark:text-indigo-300 text-[8px] md:text-[13px] 
+  text-indigo-700 dark:text-sky-200 text-[8px] md:text-[13px] 
   items-center whitespace-nowrap grow-0 overflow-x-auto text-ellipsis
 `;
 

@@ -1,9 +1,14 @@
+import { onSuccess } from "@utils/toast";
 import { LinkPressable, Preview } from "./Pressable";
 import { MidItemGrid } from "./styled";
 
 type MidItemProps = {
   copyInvUrl: () => void;
   invoice_url: string;
+};
+
+const handleOpenPreview = () => {
+  onSuccess("New tab opened.");
 };
 
 export const MidItem = ({ invoice_url, copyInvUrl }: MidItemProps) => (
@@ -16,7 +21,8 @@ export const MidItem = ({ invoice_url, copyInvUrl }: MidItemProps) => (
     <Preview
       label="Preview Link"
       content={"Opens a new tab"}
-      onClick={copyInvUrl}
+      link={invoice_url}
+      onClick={handleOpenPreview}
     />
   </MidItemGrid>
 );

@@ -34,7 +34,7 @@ export const Actions = ({ fileChange, loading, sendEmail }: ActionProps) => {
         name="upload"
         onChange={fileChange}
         placeholder="Upload Attachment"
-        className="max-w-[250px] text-[12px]"
+        className="mb-6 w-full text-[12px] md:mb-0 md:w-[250px]"
       />
       <ClickAction
         activeLabel="Send Email"

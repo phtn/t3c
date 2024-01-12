@@ -34,9 +34,9 @@ const PayGen = () => {
 
   return (
     <DashboardWrap className="h-fit overflow-y-scroll">
-      <div className="flex h-[32px] w-full items-center">
+      <div className="md flex h-[32px] w-full items-center md:mx-6">
         <Variant variant="ghost" size="xs" onClick={handleGoBack}>
-          <ArrowLeftIcon className="mr-2" />
+          <ArrowLeftIcon className="mr-2 h-5 w-5 text-sky-600" />
           Tools
         </Variant>
       </div>

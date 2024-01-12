@@ -6,7 +6,7 @@ const Container = tw(Card)`
 `;
 
 const GridContent = tw.div`
-	md:grid grid-cols-5 border-t-[0.33px] border-slate-600 
+	md:grid grid-cols-5 
 `;
 
 export { Container, GridContent };

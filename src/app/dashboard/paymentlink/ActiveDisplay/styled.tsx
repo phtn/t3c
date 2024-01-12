@@ -4,7 +4,7 @@ import tw from "tailwind-styled-components";
 
 const Display = tw.div`
   md:border-l-[0.33px] dark:border-slate-600 border-indigo-300
-  overflow-hidden col-span-3 pl-7
+  overflow-hidden col-span-3 md:pl-7 pl-0
 `;
 const LogoWrap = tw.div`
   h-full

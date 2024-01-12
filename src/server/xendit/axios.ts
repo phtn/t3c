@@ -6,7 +6,7 @@ export const createAxiosInstance = (config?: AxiosRequestConfig) =>
     headers: {
       common: {
         Accept: "application/json",
-        Authorization: `Basic ${process.env.XENDIT_TEST}`,
+        Authorization: `Basic ${process.env.XENDIT_API_KEY}`,
         "Content-Type": "application/json",
         ...config?.headers,
       },
