@@ -6,6 +6,7 @@ import { TabsContent } from "@@components/tabs";
 import { SectionLabel } from "@@components/label";
 import { ChangeEvent, useEffect, useState } from "react";
 import { onError } from "@utils/toast";
+import { useRouter } from "next/navigation";
 
 const SubmitAction = ({ onClick }: { onClick: () => void }) => (
   <div className="flex h-[72px] items-center">
@@ -21,6 +22,8 @@ export const VerifyForm = () => {
     setInput(e.target.value);
   };
 
+  const router = useRouter();
+
   const onSubmit = () => {
     if (window?.localStorage) {
       localStorage.setItem("clientCreds", JSON.stringify({ clientId: input }));
@@ -28,6 +31,7 @@ export const VerifyForm = () => {
     if (input !== "118942") {
       onError("Error", "Invalid Client ID");
     }
+    router.refresh();
   };
   return (
     <TabsContent value="verify" className="h-[244px]">
