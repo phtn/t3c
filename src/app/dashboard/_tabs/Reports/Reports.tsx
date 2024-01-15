@@ -1,3 +1,5 @@
+"use client";
+
 import { TableIcon } from "@radix-ui/react-icons";
 import { ReportsWrap } from "../../styled";
 import { Container, Title, TitleWrap } from "./styled";

@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { checkoutDefaults } from "./fields";
+import { paymentDefaults } from "./fields";
 import { useEmailParams, usePayGen } from "./hooks";
 import { ActiveForm } from "./ActiveForm";
 import { ActiveDisplay } from "./ActiveDisplay";
@@ -16,7 +16,7 @@ import { Variant } from "@@components/variant";
 const PayGen = () => {
   const form = useForm<PaymentSchema>({
     resolver: zodResolver(PaymentParams),
-    defaultValues: checkoutDefaults,
+    defaultValues: paymentDefaults,
   });
 
   const { createPaymentLink, loading, payload } = usePayGen();

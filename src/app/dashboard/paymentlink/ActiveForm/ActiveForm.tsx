@@ -1,8 +1,8 @@
-import { useCallback } from "react";
+import { type FormEvent, useCallback } from "react";
 import { CardContent, CardFooter } from "@@components/card";
 import { Form, FormField } from "@@components/form";
 import { Header } from "@@components/header";
-import { checkoutDefaults, checkoutInputs } from "../fields";
+import { paymentDefaults, checkoutInputs } from "../fields";
 import type { FieldItemProps, FormProps } from "./types";
 import { FieldItem } from "./components/FieldItem";
 import { Advanced } from "./components/Advanced";
@@ -29,8 +29,9 @@ export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
   const primaryFields = checkoutInputs.slice(0, 8);
   const secondaryFields = checkoutInputs.slice(8);
 
-  const handleCreateNew = () => {
-    reset(checkoutDefaults);
+  const handleCreateNew = (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    reset(paymentDefaults);
   };
 
   return (
