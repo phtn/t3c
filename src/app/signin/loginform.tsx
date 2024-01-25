@@ -10,12 +10,16 @@ import {
 import {
   type LoginField,
   type LoginFormProps,
-  LoginSchema,
+  type LoginSchema,
   loginDefaults,
   loginFields,
   loginSchema,
 } from "./loginschema";
-import { Control, ControllerRenderProps, useForm } from "react-hook-form";
+import {
+  type Control,
+  type ControllerRenderProps,
+  useForm,
+} from "react-hook-form";
 import { Input } from "@@components/input";
 import { useCallback } from "react";
 import { SubmitAction } from "@@components/submit";

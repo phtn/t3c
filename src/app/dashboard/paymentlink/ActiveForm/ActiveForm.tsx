@@ -45,7 +45,7 @@ export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
             <div className="flex items-center">
               <Variant
                 onClick={handleCreateNew}
-                className="mr-2"
+                className="mr-2 h-[24px] md:h-[32px]"
                 size="sm"
                 variant="default"
               >
@@ -53,7 +53,7 @@ export const ActiveForm = ({ form, onSubmit, loading }: FormProps) => {
               </Variant>
               <Variant
                 onClick={handleCreateNew}
-                className="mr-2"
+                className="mr-2 h-[24px] md:h-[32px]"
                 size="sm"
                 variant="destructive"
               >

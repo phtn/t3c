@@ -34,7 +34,7 @@ type IconPrefixType = {
   icon: React.ReactElement;
 };
 const iconClassname =
-  "h-[16px] w-[18px] mr-[10px] dark:text-orange-200/80 text-slate-600";
+  "h-[16px] w-[20px] mr-[10px] dark:text-orange-200/80 text-slate-600";
 const IconPrefix: IconPrefixType[] = [
   { name: "user", icon: <PersonIcon className={iconClassname} /> },
   { name: "name", icon: <IdCardIcon className={iconClassname} /> },
@@ -53,7 +53,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div
         className={cn(
-          "border-[0.33px[] focus-within:ring-ring flex h-10 items-center rounded-md bg-neutral-200/60 pl-3 pr-[2px] text-sm ring-offset-teal-500 focus-within:ring-1 focus-within:ring-offset-1 dark:bg-indigo-200/20",
+          "border-[0.33px[] focus-within:ring-ring flex h-10 items-center rounded-md bg-neutral-200/60 pl-3 pr-[3px] text-sm ring-offset-teal-500 focus-within:ring-1 focus-within:ring-offset-1 dark:bg-indigo-200/20",
           className,
         )}
       >
@@ -65,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
           type={type}
           ref={ref}
-          className="w-full rounded bg-transparent py-2 placeholder:text-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 "
+          className="w-full rounded bg-transparent py-2 text-[12px] placeholder:text-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm "
         />
       </div>
     );

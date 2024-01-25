@@ -1,16 +1,14 @@
 "use client";
 
 import { GridBackground } from "@@components/grid";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useLocalStorage } from "./hooks";
 import { opts } from "@utils/helpers";
 import { Signin } from "./signin";
 import { VerifyAccount } from "./verify";
 import { onSuccess } from "@utils/toast";
 import { Aliens } from "../_home/Landing/components/Aliens";
-import { Arrival } from "../_home/Landing/components/Arrival";
 import { JumboFlex, JumboTitle, PaygenLogo } from "./styled";
-import { useRouter } from "next/navigation";
 
 const Sign = () => {
   const { getCreds } = useLocalStorage();
@@ -21,7 +19,7 @@ const Sign = () => {
   const SignOptions = useCallback(() => {
     const options = opts(<Signin />, <VerifyAccount />);
     return <>{options.get(withCreds)}</>;
-  }, [withCreds, creds, getCreds(), client]);
+  }, [withCreds]);
 
   if (withCreds) {
     onSuccess("AutoProtect", "Welcome to PayGen");

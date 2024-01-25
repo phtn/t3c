@@ -2,10 +2,6 @@ import {
   Container,
   GridContent,
   ToolContainer,
-  Title,
-  TitleWrap,
-  TitleFlex,
-  ToolIcon,
   ToolDescription,
   ToolSubtext,
   ToolTitleWrap,
@@ -14,6 +10,7 @@ import {
 import { DashboardWrap } from "../../styled";
 import Link from "next/link";
 import { CardTitle } from "@@components/card";
+import { ContentTitle, ToolsIcon } from "../common";
 
 type ToolType = {
   description: string;
@@ -39,20 +36,11 @@ const Tool = (props: ToolType) => {
   );
 };
 
-const ContentTitle = () => (
-  <TitleWrap>
-    <TitleFlex>
-      <ToolIcon />
-      <Title>Tools</Title>
-    </TitleFlex>
-  </TitleWrap>
-);
-
 export const Tools = () => {
   return (
     <DashboardWrap>
       <Container>
-        <ContentTitle />
+        <ContentTitle title="Tools" icon={<ToolsIcon />} />
         <GridContent>
           <Tool
             description="Generate payment links with Xendit."

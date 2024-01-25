@@ -1,6 +1,6 @@
-import { HTMLInputTypeAttribute } from "react";
-import { IconName } from "@@components/input";
-import { UseFormReturn } from "react-hook-form";
+import { type HTMLInputTypeAttribute } from "react";
+import { type UseFormReturn } from "react-hook-form";
+import { type IconName } from "@@components/input";
 import { z } from "zod";
 
 export const loginSchema = z.object({

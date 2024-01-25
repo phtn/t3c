@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@@components/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@@components/tabs";
 import { Container, Title, TitleFlex, VerifyIcon } from "./styled";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import { VerifyForm } from "./verifyform";

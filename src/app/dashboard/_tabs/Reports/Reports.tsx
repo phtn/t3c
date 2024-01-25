@@ -1,19 +1,14 @@
 "use client";
 
-import { TableIcon } from "@radix-ui/react-icons";
 import { ReportsWrap } from "../../styled";
-import { Container, Title, TitleWrap } from "./styled";
+import { Container } from "./styled";
+import { ContentTitle, ReportsIcon } from "../common";
 
 export const Reports = () => {
   return (
     <ReportsWrap>
       <Container>
-        <TitleWrap>
-          <Title>
-            <TableIcon className="mr-2" />
-            <span>Reports</span>
-          </Title>
-        </TitleWrap>
+        <ContentTitle title="Reports" icon={<ReportsIcon />} />
       </Container>
     </ReportsWrap>
   );

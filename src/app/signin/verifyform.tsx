@@ -4,7 +4,7 @@ import { Input } from "@@components/input";
 import { Variant } from "@@components/variant";
 import { TabsContent } from "@@components/tabs";
 import { SectionLabel } from "@@components/label";
-import { ChangeEvent, useEffect, useState } from "react";
+import { type ChangeEvent, useState } from "react";
 import { onError } from "@utils/toast";
 import { useRouter } from "next/navigation";
 

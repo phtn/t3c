@@ -1,17 +1,12 @@
-import { GearIcon, TableIcon } from "@radix-ui/react-icons";
-import { ReportsWrap, SettingsWrap } from "../../styled";
-import { Container, Title, TitleWrap } from "./styled";
+import { SettingsWrap } from "../../styled";
+import { Container } from "./styled";
+import { ContentTitle, SettingsIcon } from "../common";
 
 export const Settings = () => {
   return (
     <SettingsWrap>
       <Container>
-        <TitleWrap>
-          <Title>
-            <GearIcon className="mr-2" />
-            <span>Settings</span>
-          </Title>
-        </TitleWrap>
+        <ContentTitle title="Settings" icon={<SettingsIcon />} />
       </Container>
     </SettingsWrap>
   );

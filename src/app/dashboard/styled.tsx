@@ -7,10 +7,10 @@ const Tab = tw(Tabs)`
   w-screen mt-[24px] 
 `;
 const Trigger = tw(TabsTrigger)`
-  mx-[4px] md:mx-[8px] transition-all duration-400 dark:hover:text-orange-100  
+  mx-[4px] md:mx-[8px] transition-all tracking-tight duration-400 text-indigo-900 dark:text-neutral-500 dark:hover:text-orange-100  
 `;
 const ContentWrap = tw.div`
-  h-[calc(100vh-100px)]
+  h-[calc(100vh-212px)] md:h-[calc(100vh-102px)]
   overflow-y-scroll
 `;
 const Content = styled(ContentWrap).attrs({})``;

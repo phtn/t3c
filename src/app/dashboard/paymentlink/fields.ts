@@ -86,7 +86,7 @@ export const checkoutInputs: CheckoutInput[] = [
   {
     name: "assured_name",
     label: "Assured Name",
-    placeholder: "Name of Policy Holder",
+    placeholder: "Policy Holder",
     inputType: "input",
     type: "text",
     alt: "user",
@@ -94,7 +94,7 @@ export const checkoutInputs: CheckoutInput[] = [
   {
     name: "agent_name",
     label: "Agent Name",
-    placeholder: "Name of the agent",
+    placeholder: "Agent name",
     inputType: "input",
     type: "text",
     alt: "name",

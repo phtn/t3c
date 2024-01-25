@@ -1,5 +1,4 @@
-import { Card, CardDescription, CardTitle } from "@@components/card";
-import { MixIcon } from "@radix-ui/react-icons";
+import { Card, CardDescription } from "@@components/card";
 import tw from "tailwind-styled-components";
 
 const Container = tw(Card)`
@@ -8,14 +7,6 @@ const Container = tw(Card)`
 
 const GridContent = tw.div`
 	md:grid xl:grid-cols-3 md:grid-cols-2 gap-6 
-`;
-
-const TitleWrap = tw.div`
-  h-[48px] flex items-start justify-between
-`;
-
-const TitleFlex = tw.div`
-  text-[1.5rem] font-bold flex items-center
 `;
 
 const ToolContainer = tw(Card)`
@@ -27,17 +18,8 @@ const ToolTitleWrap = tw.div`
 `;
 
 const ToolTag = tw.div`
-  bg-gradient-to-tr from-sky-500 to-pink-500 rounded-md text-[10px] flex items-center justify-center 
-
-  h-[24px] w-fit px-3 uppercase font-bold 
-`;
-
-const Title = tw.div`
-  text-neutral-500 dark:text-indigo-50
-`;
-
-const ToolIcon = tw(MixIcon)`
-  mr-2 text-neutral-500 dark:text-indigo-50
+  bg-gradient-to-tr from-sky-400 to-pink-400 rounded-md text-[10px] flex items-center justify-center 
+  h-[24px] w-fit px-3 uppercase text-white font-bold 
 `;
 
 const ToolDescription = tw(CardDescription)`
@@ -51,13 +33,9 @@ const ToolSubtext = tw(CardDescription)`
 export {
   Container,
   GridContent,
-  Title,
-  TitleFlex,
-  TitleWrap,
   ToolContainer,
   ToolDescription,
   ToolSubtext,
   ToolTag,
   ToolTitleWrap,
-  ToolIcon,
 };
